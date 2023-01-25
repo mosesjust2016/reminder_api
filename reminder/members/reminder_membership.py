@@ -1,3 +1,4 @@
+from flask import *
 from flask import Blueprint, render_template, request, jsonify, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from .. models.membersModel import Member
@@ -20,7 +21,7 @@ reminder_membership = Blueprint("reminder_membership", __name__, static_folder="
 base_url = config('BASE_URL')
 current_time = datetime.now(pytz.timezone('Africa/Lusaka'))  
 project_enviroment  = config('ENVIROMENT')
-
+recaptcha = ReCaptcha()
 
 
 @reminder_membership.route("/registration", methods=['POST'])
@@ -48,30 +49,31 @@ def registration():
             return resp
         else:
 
-            if recaptcha.verify(): # Use verify() method to see if ReCaptcha is filled out
+            if request.method == 'POST': # Check to see if flask.request.method is POST
+                if recaptcha.verify(): # Use verify() method to see if ReCaptcha is filled out
 
-                    created_date = current_time.strftime('%Y-%m-%d %H:%M:%S')
-                    token = jwt.encode({'id': _wanumber, 'exp' : datetime.utcnow() + timedelta(minutes=60)}, config('SECRET_KEY'), algorithm='HS256') 
+                        created_date = current_time.strftime('%Y-%m-%d %H:%M:%S')
+                        token = jwt.encode({'id': _wanumber, 'exp' : datetime.utcnow() + timedelta(minutes=60)}, config('SECRET_KEY'), algorithm='HS256') 
 
-                    if _accepted_terms != "False":
+                        if _accepted_terms != "False":
 
-                        members = Member(firstname = _firstname, lastname = _lastname, wa_number = convert_phone_number(_wanumber), dob= _dob, accepted_terms = True, created_at = created_date)
-                        db.session.add(members)
-                        db.session.commit()
+                            members = Member(firstname = _firstname, lastname = _lastname, wa_number = convert_phone_number(_wanumber), dob= _dob, accepted_terms = True, created_at = created_date)
+                            db.session.add(members)
+                            db.session.commit()
 
-                        return redirect(url_for('base_url + "/success.html', vid=token, **request.args) , code=302)
-                    else:
-                        members = Member(firstname = _firstname, lastname = _lastname, wa_number = convert_phone_number(_wanumber), dob= _dob, accepted_terms = False, created_at = created_date)
-                        db.session.add(members)
-                        db.session.commit()
+                            return redirect(url_for('base_url + "/success.html', vid=token, **request.args) , code=302)
+                        else:
+                            members = Member(firstname = _firstname, lastname = _lastname, wa_number = convert_phone_number(_wanumber), dob= _dob, accepted_terms = False, created_at = created_date)
+                            db.session.add(members)
+                            db.session.commit()
 
-                        return redirect(url_for('base_url + "/success.html', vid=token, **request.args) , code=302)
-                
-            else:
-                resp = jsonify({'status': 400,
-                        'isError': 'true',
-                        'message' : 'Please fill out the ReCaptcha!'}), 200
-                return resp
+                            return redirect(url_for('base_url + "/success.html', vid=token, **request.args) , code=302)
+                    
+                else:
+                    resp = jsonify({'status': 400,
+                            'isError': 'true',
+                            'message' : 'Please fill out the ReCaptcha!'}), 200
+                    return resp
 
      # If the keys are not passed
     else:

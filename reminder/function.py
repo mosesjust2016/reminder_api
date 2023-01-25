@@ -52,8 +52,7 @@ def send_wa_GreenAPI(sendto, msg):
 #FUNCTION TO SEND WHATSAPP USING GREEN API
 def sendFile_wa_GAPI(sendto, link, caption):
 
-    created_date = current_time.strftime('%Y%m%d%H%M%S')
-    dictionary = {"chatId" : sendto + "@c.us", "urlFile": link, "fileName": created_date+".pdf", "caption": caption}
+    dictionary = {"chatId" : sendto + "@c.us", "urlFile": link, "fileName": "1.pdf", "caption": caption}
 
     jsonString = json.dumps(dictionary, indent=4)
 
@@ -72,7 +71,7 @@ def sendFile_wa_GAPI(sendto, link, caption):
 def sendFile_wa_GAPI_group(sendto, msg):
 
     created_date = current_time.strftime('%Y%m%d%H%M%S')
-    dictionary = {"chatId" : sendto + "@g.us", "urlFile": msg, "fileName":created_date+".pdf", "caption": 'Hi Team please find Sermon study notes for this week. Please read through and let us meet on wednesday'}
+    dictionary = {"chatId" : sendto + "@g.us", "urlFile": msg, "fileName":"1.pdf", "caption": 'Hi Team please find Sermon study notes for this week. Please read through and let us meet on wednesday'}
 
     jsonString = json.dumps(dictionary, indent=4)
 

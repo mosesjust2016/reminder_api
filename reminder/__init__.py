@@ -4,6 +4,7 @@ from extensions import db, jwt
 from decouple import config
 from flask_cors import CORS
 from datetime import datetime, timedelta
+from flask_recaptcha import ReCaptcha
 
 from .members.reminder_membership import reminder_membership
 
