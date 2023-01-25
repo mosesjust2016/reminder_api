@@ -74,6 +74,11 @@ def registration():
                             'isError': 'true',
                             'message' : 'Please fill out the ReCaptcha!'}), 200
                     return resp
+            else:
+                    resp = jsonify({'status': 400,
+                            'isError': 'true',
+                            'message' : 'Method not allowed'}), 200
+                    return resp
 
      # If the keys are not passed
     else:
