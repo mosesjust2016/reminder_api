@@ -228,6 +228,36 @@ def reading_reminder():
             return resp
 
 
+@reminder_membership.route("/reading_followup", methods=['POST'])
+def reading_followup():
+
+   
+            # Get data from the database
+            members = Member.query.all()
+
+            registered_members = []
+            
+            for person in members:
+                person_details = {}
+                person_details['memberid']= person.memberid
+                person_details['firstname']= person.firstname
+                person_details['lastname']= person.lastname
+                person_details['wa_number']= person.wa_number
+                person_details['dob'] = person.dob
+
+                registered_members.append(person_details)
+
+            
+            for x in registered_members:
+                res = send_wa_GreenAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +" Did you read todays chapters according to the reading plan")
+                sleep(randint(3,12))
+            
+            resp = jsonify({'status': 200,
+                            'isError': 'false',
+                            'message' : registered_members}), 200
+            return resp
+
+
 
 
 
