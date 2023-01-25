@@ -40,7 +40,7 @@ def registration():
     if _platform and _firstname and _lastname and _wanumber and _dob and _accepted_terms:
 
         # Check if mobile is already in the database
-        is_user_mobile = Member.query.filter_by(wa_number = convert_phone_number(_wanumber)).first()
+        is_user_mobile = Member.query.filter_by(wa_number =_wanumber).first()
 
         if is_user_mobile:
             resp = jsonify({'status': 400,
@@ -67,7 +67,7 @@ def registration():
                             return resp
 
                         else:
-                            members = Member(firstname = _firstname, lastname = _lastname, wa_number = convert_phone_number(_wanumber), dob= _dob, accepted_terms = False, created_at = created_date)
+                            members = Member(firstname = _firstname, lastname = _lastname, wa_number = _wanumber, dob= _dob, accepted_terms = False, created_at = created_date)
                             db.session.add(members)
                             db.session.commit()
 
