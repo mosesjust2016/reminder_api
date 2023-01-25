@@ -57,7 +57,7 @@ def registration():
 
                         if _accepted_terms != "False":
 
-                            members = Member(firstname = _firstname, lastname = _lastname, wa_number = convert_phone_number(_wanumber), dob= _dob, accepted_terms = True, created_at = created_date)
+                            members = Member(firstname = _firstname, lastname = _lastname, wa_number = _wanumber, dob= _dob, accepted_terms = True, created_at = created_date)
                             db.session.add(members)
                             db.session.commit()
 
