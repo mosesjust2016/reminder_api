@@ -63,7 +63,7 @@ def registration():
 
                             resp = jsonify({'status': 200,
                                             'isError': 'false',
-                                            'message' : registered_members}), 200
+                                            'message' : 'Account registered successfully'}), 200
                             return resp
 
                         else:
@@ -73,7 +73,7 @@ def registration():
 
                             resp = jsonify({'status': 200,
                                             'isError': 'false',
-                                            'message' : registered_members}), 200
+                                            'message' : 'Account registered successfully'}), 200
                             return resp
                     
                 else:
