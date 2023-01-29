@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 from flask_recaptcha import ReCaptcha
 
 from .members.reminder_membership import reminder_membership
+from .members.account_management import account_management
 
 def create_app():
     app = Flask(__name__)
@@ -28,11 +29,22 @@ def create_app():
     else:
         encoded = urllib.parse.quote_plus(db_password)
         app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://mosesjasitk_Admin:'+ encoded +'@localhost/mosesjasitk_reminder'
+
+    
+     #JWT configs
+    app.secret_key = config('SECRET_KEY')  
+    app.config['JWT_TOKEN_LOCATION'] = ['headers', 'query_string']
+    app.config['JWT_BLACKLIST_ENABLED'] = True
+    app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access']
+    app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=6)
+    app.config["JWT_REFRESH_TOKEN_EXPIRES"] = timedelta(hours=24)
+    app.config["JWT_ALGORITHM"] = "HS256"
         
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
     db.init_app(app)
     jwt.init_app(app)
 
     app.register_blueprint(reminder_membership, url_prefix="/reminder_membership")
+    app.register_blueprint(account_management, url_prefix="/account_management")
 
     return app

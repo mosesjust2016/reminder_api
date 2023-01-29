@@ -2,7 +2,8 @@ from flask import *
 from flask import Blueprint, render_template, request, jsonify, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from .. models.membersModel import Member
-from .. function import convert_phone_number, sendFile_wa_GAPI, sendFile_wa_GAPI_group, send_wa_GreenAPI
+from .. models.recordModel import Record
+from .. function import convert_phone_number, sendFile_wa_GAPI, sendFile_wa_GAPI_group, send_wa_GreenAPI, sendBtn_GAPI
 from datetime import date, datetime, timedelta
 from extensions import db
 from flask_recaptcha import ReCaptcha # Import ReCaptcha object
@@ -134,7 +135,7 @@ def download_notes():
 
         for x in registered_members:
             res = sendFile_wa_GAPI("260" + x['wa_number'], link.get('href'), "Hi " +  x['firstname'] + " " + x['lastname'] +" please find sermon study notes for this week. Please read through and let us meet on wednesday")
-            sleep(randint(3,12))
+            sleep(randint(30,60))
 
         # load the json to a string
         JsonString = json.loads(res)
@@ -167,7 +168,7 @@ def happy_birthday():
 
             for x in registered_members:
                 res = send_wa_GreenAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +". You are special to us and you are special to God. We as MLFC Carwash CG would like to wish you a happy birthday. We pray that you have a great one blessings")
-                sleep(randint(3,12))
+                sleep(randint(30,60))
         
             resp = jsonify({'status': 200,
                             'isError': 'false',
@@ -180,7 +181,6 @@ def happy_birthday():
 @reminder_membership.route("/reading_reminder", methods=['POST'])
 def reading_reminder():
 
-   
             # Get data from the database
             members = Member.query.all()
 
@@ -231,7 +231,6 @@ def reading_reminder():
 @reminder_membership.route("/reading_followup", methods=['POST'])
 def reading_followup():
 
-   
             # Get data from the database
             members = Member.query.all()
 
@@ -244,18 +243,71 @@ def reading_followup():
                 person_details['lastname']= person.lastname
                 person_details['wa_number']= person.wa_number
                 person_details['dob'] = person.dob
+                        
+                token = jwt.encode({'public_id': person.memberid, 'exp' : datetime.utcnow() + timedelta(hours=24)}, config('SECRET_KEY')) 
+                person_details['token'] = token 
 
                 registered_members.append(person_details)
 
             
             for x in registered_members:
-                res = send_wa_GreenAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +" Did you read todays chapters according to the reading plan")
-                sleep(randint(3,12))
+
+                yesURL = "http://127.0.0.1:5000/reminder_membership/response?ans=yes&token=" + x['token']
+                noURL = "http://127.0.0.1:5000/reminder_membership/response?ans=no&token=" + x['token']
+
+                res = sendBtn_GAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +" Did you read todays chapters according to the reading plan", yesURL, noURL)
+                sleep(randint(30,60))
+
+                print(res)
             
             resp = jsonify({'status': 200,
                             'isError': 'false',
                             'message' : registered_members}), 200
             return resp
+
+@reminder_membership.route("/response", methods=['GET'])
+def response():
+
+    answer= request.args.get('ans')
+    token = request.args.get('token')
+
+    decoded_token = jwt.decode(token, algorithms='HS256', verify=True, key=config('SECRET_KEY'))
+
+    # Get data from the database
+    members = Member.query.filter_by(memberid = decoded_token['public_id']).first()
+
+    if members:
+
+        created_date = current_time.strftime('%Y-%m-%d')
+
+        filter_data = {'memberid': decoded_token['public_id'], 'updated_on': created_date}
+        filter_data = {key: value for (key, value) in filter_data.items() if value}
+
+        is_record = Record.query.filter_by(**filter_data).all()
+        if is_record:
+            #Alraedy Updated
+            resp = jsonify({'status': 400,
+                        'isError': 'true',
+                        'message' : 'Already updated the status'}), 400
+            return redirect("https://reminder.mosesjasi.tk/alredy-updated.html", code=302)
+        
+        else:
+
+            records = Record(memberid = decoded_token['public_id'], status = answer, updated_on = created_date)
+            db.session.add(records)
+            db.session.commit()
+
+            resp = jsonify({'status': 200,
+                            'isError': 'false',
+                            'message' : 'Status has been updated'}), 200
+            return redirect("https://reminder.mosesjasi.tk/status-update-success.html", code=302)
+    else:
+        resp = jsonify({'status': 400,
+                        'isError': 'true',
+                        'message' : 'The member does not exist'}), 400
+                        
+        return redirect("https://reminder.mosesjasi.tk/does-not-exist.html", code=302)
+
 
 
 

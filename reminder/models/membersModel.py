@@ -7,7 +7,10 @@ class Member(db.Model):
     firstname = db.Column(db.String(100), nullable=False)
     lastname = db.Column(db.String(100), nullable=False)
     wa_number = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(200), unique=True, nullable=False)
     dob = db.Column(db.Date)
+    code = db.Column(db.String(200))
+    is_activated = db.Column(db.Boolean)
     accepted_terms = db.Column(db.Boolean)
     created_at = db.Column(db.DateTime(timezone=True))
 

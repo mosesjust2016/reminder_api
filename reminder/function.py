@@ -31,6 +31,20 @@ def convert_phone_number(phone):
     num = re.sub(r'(?<!\S)(\d{3})-', r'(\1) ',  newphone) 
     return num
 
+#FUNCTION TO GENERATE DIGIT CODE
+def gen_len_code(length, num_only):
+
+    code = None
+    
+    if num_only:
+        digits = string.digits
+        code = ''.join(secrets.choice(digits) for i in range(length))
+    else:
+        # alphabet = string.ascii_letters + string.digits
+        alphabet = string.ascii_uppercase + string.digits
+        code = ''.join(secrets.choice(alphabet) for i in range(length))
+    return code
+
 
 #FUNCTION TO SEND WHATSAPP USING GREEN API
 def send_wa_GreenAPI(sendto, msg):
@@ -76,6 +90,31 @@ def sendFile_wa_GAPI_group(sendto, msg):
     jsonString = json.dumps(dictionary, indent=4)
 
     url = "https://api.green-api.com/waInstance" + wa_instance + "/sendFileByUrl/" + wa_token 
+
+    payload = jsonString
+    headers = {
+    'Content-Type': 'application/json'
+    }
+
+    response = requests.request("POST", url, headers = headers, data = payload)
+    return response.text.encode('utf8')
+
+
+#FUNCTION TO SEND WHATSAPP BUTTONS USING GREEN API
+def sendBtn_GAPI(sendto, msg, yesURL, noURL):
+
+    dictionary = {  "chatId" : sendto + "@c.us", 
+                    "message": msg,
+                    "footer": "Please choose answer by clicking a button?",
+                    "templateButtons": [
+                            {"index": 1, "urlButton": {"displayText": "Yes I managed", "url": yesURL}},
+                            {"index": 2, "urlButton": {"displayText": "No I did not manage", "url": noURL}}
+                        ]
+                 }
+
+    jsonString = json.dumps(dictionary, indent=4)
+
+    url = "https://api.green-api.com/waInstance" + wa_instance + "/sendTemplateButtons/" + wa_token 
 
     payload = jsonString
     headers = {
