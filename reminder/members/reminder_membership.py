@@ -252,8 +252,8 @@ def reading_followup():
             
             for x in registered_members:
 
-                yesURL = "https://reminder.mosesjasi.tk/reminder_membership/response?ans=yes&token=" + x['token']
-                noURL = "https://reminder.mosesjasi.tk/reminder_membership/response?ans=no&token=" + x['token']
+                yesURL = "https://reminder.mosesjasi.tk/backend/reminder_membership/response?ans=yes&token=" + x['token']
+                noURL =  "https://reminder.mosesjasi.tk/backend/reminder_membership/response?ans=no&token=" + x['token']
 
                 res = sendBtn_GAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +" Did you read todays chapters according to the reading plan", yesURL, noURL)
                 sleep(randint(30,60))

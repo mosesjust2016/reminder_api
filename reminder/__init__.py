@@ -8,6 +8,7 @@ from flask_recaptcha import ReCaptcha
 
 from .members.reminder_membership import reminder_membership
 from .members.account_management import account_management
+from .members.member_profile import member_profile
 
 def create_app():
     app = Flask(__name__)
@@ -46,5 +47,6 @@ def create_app():
 
     app.register_blueprint(reminder_membership, url_prefix="/reminder_membership")
     app.register_blueprint(account_management, url_prefix="/account_management")
+    app.register_blueprint(member_profile, url_prefix="/member_profile")
 
     return app
