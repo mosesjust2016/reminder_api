@@ -289,7 +289,7 @@ def response():
             resp = jsonify({'status': 400,
                         'isError': 'true',
                         'message' : 'Already updated the status'}), 400
-            return redirect("https://reminder.mosesjasi.tk/alredy-updated.html", code=302)
+            return redirect("https://reminder.mosesjasi.tk/already-updated.html", code=302)
         
         else:
 
