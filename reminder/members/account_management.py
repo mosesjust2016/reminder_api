@@ -39,7 +39,6 @@ def activate():
             message = "Your one time password to activate your reminder account is : " + otp_code
             #Send otp code
             wa_resp = send_wa_GreenAPI("260" + _wanumber, message)
-            print(wa_resp)
             token = jwt.encode({'public_id': is_user_mobile.memberid, 'exp' : datetime.utcnow() + timedelta(minutes=60)}, config('SECRET_KEY')) 
 
             #Update the code
