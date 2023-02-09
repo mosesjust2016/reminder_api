@@ -9,7 +9,6 @@ from flask_recaptcha import ReCaptcha
 from .members.reminder_membership import reminder_membership
 from .members.account_management import account_management
 from .members.member_profile import member_profile
-
 def create_app():
     app = Flask(__name__)
     CORS(app)

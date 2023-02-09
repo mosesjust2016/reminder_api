@@ -10,6 +10,7 @@ wa_token = config('WHATSAPP_TOKEN')
 current_time = datetime.now(pytz.timezone('Africa/Lusaka')) 
 
 wa_key = config('WA_KEY')
+timeoutSeconds = 60
 
 #FUNCTION TO CONVERT MOBILE NUMBER TO 9 DIDGITS
 def convert_phone_number(phone):
@@ -56,10 +57,17 @@ def send_wa_GreenAPI(sendto, msg):
 
     payload = jsonString
     headers = {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
     }
-    
-    response = requests.request("POST", url, headers=headers, data = payload)
+
+    response  = ""
+
+    try:
+        response = requests.request("POST", url, headers=headers, data = payload, timeout=timeoutSeconds)
+    except (requests.exceptions.RequestException, ValueError) as e:
+        response = e
+
     return response.text.encode('utf8')
 
 
@@ -73,11 +81,17 @@ def sendFile_wa_GAPI(sendto, link, caption):
     url = "https://api.green-api.com/waInstance" + wa_instance + "/sendFileByUrl/" + wa_token 
     payload = jsonString
     headers = {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
     }
 
-    response = requests.request("POST", url, headers = headers, data = payload)
-    print(response)
+    response  = ""
+
+    try:
+        response = requests.request("POST", url, headers = headers, data = payload, timeout=timeoutSeconds)
+    except (requests.exceptions.RequestException, ValueError) as e:
+        response = e
+    
     return response.text.encode('utf8')
 
 
@@ -93,10 +107,17 @@ def sendFile_wa_GAPI_group(sendto, msg):
 
     payload = jsonString
     headers = {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
     }
 
-    response = requests.request("POST", url, headers = headers, data = payload)
+    response  = ""
+
+    try:
+        response = requests.request("POST", url, headers = headers, data = payload, timeout=timeoutSeconds)
+    except (requests.exceptions.RequestException, ValueError) as e:
+        response = e
+
     return response.text.encode('utf8')
 
 
@@ -118,10 +139,17 @@ def sendBtn_GAPI(sendto, msg, yesURL, noURL):
 
     payload = jsonString
     headers = {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
     }
 
-    response = requests.request("POST", url, headers = headers, data = payload)
+    response  = ""
+
+    try:
+        response = requests.request("POST", url, headers = headers, data = payload, timeout=timeoutSeconds)
+    except (requests.exceptions.RequestException, ValueError) as e:
+        response = e
+    
     return response.text.encode('utf8')
 
 

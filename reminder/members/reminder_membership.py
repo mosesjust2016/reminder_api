@@ -131,14 +131,19 @@ def download_notes():
                 pdf = open("pdf_upload/"+str(i)+".pdf", 'wb')
                 pdf.write(response.content)
                 pdf.close()
-                print("File ", i, " downloaded")
 
         for x in registered_members:
             res = sendFile_wa_GAPI("260" + x['wa_number'], link.get('href'), "Hi " +  x['firstname'] + " " + x['lastname'] +" please find sermon study notes for this week. Please read through and let us meet on wednesday")
-            sleep(randint(30,60))
+            sleep(randint(6,18))
 
-        # load the json to a string
-        JsonString = json.loads(res)
+            # load the json to a string
+            JsonString = json.loads(res)
+                
+            if('BAE' in JsonString['idMessage']):
+                continue
+            else:
+                res = sendFile_wa_GAPI("260" + x['wa_number'], link.get('href'), "Hi " +  x['firstname'] + " " + x['lastname'] +" please find sermon study notes for this week. Please read through and let us meet on wednesday")
+                sleep(randint(6,18))
 
         resp = jsonify({'status': 200,
                         'isError': 'false',
@@ -168,7 +173,16 @@ def happy_birthday():
 
             for x in registered_members:
                 res = send_wa_GreenAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +". You are special to us and you are special to God. We as MLFC Carwash CG would like to wish you a happy birthday. We pray that you have a great one blessings")
-                sleep(randint(30,60))
+                sleep(randint(6,18))
+
+                # load the json to a string
+                JsonString = json.loads(res)
+                
+                if('BAE' in JsonString['idMessage']):
+                    continue
+                else:
+                    res = send_wa_GreenAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +". You are special to us and you are special to God. We as MLFC Carwash CG would like to wish you a happy birthday. We pray that you have a great one blessings")
+                    sleep(randint(6,18))
         
             resp = jsonify({'status': 200,
                             'isError': 'false',
@@ -220,7 +234,16 @@ def reading_reminder():
 
             for x in registered_members:
                 res = send_wa_GreenAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +" Today's " + str(dt)  + " bible reading plan is from " + rplan)
-                sleep(randint(3,12))
+                sleep(randint(6,18))
+
+                # load the json to a string
+                JsonString = json.loads(res)
+                
+                if('BAE' in JsonString['idMessage']):
+                    continue
+                else:
+                    res = send_wa_GreenAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +" Today's " + str(dt)  + " bible reading plan is from " + rplan)
+                    sleep(randint(6,18))
             
             resp = jsonify({'status': 200,
                             'isError': 'false',
@@ -256,10 +279,17 @@ def reading_followup():
                 noURL =  "https://reminder.mosesjasi.tk/backend/reminder_membership/response?ans=no&token=" + x['token']
 
                 res = sendBtn_GAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +" Did you read todays chapters according to the reading plan", yesURL, noURL)
-                sleep(randint(30,60))
+                sleep(randint(6,18))
 
-                print(res)
-            
+                # load the json to a string
+                JsonString = json.loads(res)
+                
+                if('BAE' in JsonString['idMessage']):
+                    continue
+                else:
+                    res = sendBtn_GAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +" Did you read todays chapters according to the reading plan", yesURL, noURL)
+                    sleep(randint(6,18))
+
             resp = jsonify({'status': 200,
                             'isError': 'false',
                             'message' : registered_members}), 200
