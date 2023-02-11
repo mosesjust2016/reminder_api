@@ -287,8 +287,11 @@ def reading_followup():
                 if('BAE' in JsonString['idMessage']):
                     continue
                 else:
+                    
                     res = sendBtn_GAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +" Did you read todays chapters according to the reading plan", yesURL, noURL)
                     sleep(randint(6,18))
+
+
 
             resp = jsonify({'status': 200,
                             'isError': 'false',
