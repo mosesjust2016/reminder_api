@@ -24,7 +24,6 @@ current_time = datetime.now(pytz.timezone('Africa/Lusaka'))
 project_enviroment  = config('ENVIROMENT')
 recaptcha = ReCaptcha()
 
-
 @reminder_membership.route("/registration", methods=['POST'])
 def registration():
 
@@ -283,16 +282,24 @@ def reading_followup():
 
                 # load the json to a string
                 JsonString = json.loads(res)
+
                 
+
                 if('BAE' in JsonString['idMessage']):
                     continue
                 else:
-                    
                     res = sendBtn_GAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +" Did you read todays chapters according to the reading plan", yesURL, noURL)
                     sleep(randint(6,18))
-
-
-
+                        
+                    # load the json to a string
+                    JsonString = json.loads(res)
+                        
+                    if('BAE' in JsonString['idMessage']):
+                        continue
+                    else:
+                        res = sendBtn_GAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +" Did you read todays chapters according to the reading plan", yesURL, noURL)
+                        sleep(randint(6,18))
+                
             resp = jsonify({'status': 200,
                             'isError': 'false',
                             'message' : registered_members}), 200

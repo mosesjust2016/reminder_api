@@ -1,0 +1,198 @@
+2023-02-12 09:39:26,526  * Debugger is active!
+2023-02-12 09:39:26,532  * Debugger PIN: 133-707-356
+2023-02-12 09:40:53,622  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-12 09:40:55,228  * Debugger is active!
+2023-02-12 09:40:55,234  * Debugger PIN: 133-707-356
+2023-02-12 09:41:04,734 127.0.0.1 - - [12/Feb/2023 09:41:04] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-12 09:42:36,854  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-12 09:42:38,354  * Debugger is active!
+2023-02-12 09:42:38,361  * Debugger PIN: 133-707-356
+2023-02-12 09:42:41,020 {'Connection error': ConnectionError(MaxRetryError("HTTPSConnectionPool(host='api.green-api.com', port=443): Max retries exceeded with url: /waInstance1101721779/sendTemplateButtons/9694d3eb04664e33bb5028d48d9e8a0b0bf6e9cef2ac43219c (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002743F7AD810>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"))}
+2023-02-12 09:42:41,032 127.0.0.1 - - [12/Feb/2023 09:42:41] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-12 09:47:41,206  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-12 09:47:55,978 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-12 09:47:55,978 [33mPress CTRL+C to quit[0m
+2023-02-12 09:47:55,980  * Restarting with stat
+2023-02-12 09:47:57,219  * Debugger is active!
+2023-02-12 09:47:57,225  * Debugger PIN: 133-707-356
+2023-02-12 09:48:24,340 127.0.0.1 - - [12/Feb/2023 09:48:24] "POST /reminder_membership/reading_followup HTTP/1.1" 200 -
+2023-02-12 09:50:04,091 127.0.0.1 - - [12/Feb/2023 09:50:04] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-12 09:51:15,484  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-12 09:51:15,622  * Restarting with stat
+2023-02-12 09:51:16,888  * Debugger is active!
+2023-02-12 09:51:16,894  * Debugger PIN: 133-707-356
+2023-02-12 09:59:54,842  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-12 09:59:55,002  * Restarting with stat
+2023-02-12 09:59:56,214  * Debugger is active!
+2023-02-12 09:59:56,221  * Debugger PIN: 133-707-356
+2023-02-12 10:00:07,936 {'Connection error': ConnectionError(MaxRetryError("HTTPSConnectionPool(host='api.green-api.com', port=443): Max retries exceeded with url: /waInstance1101721779/sendTemplateButtons/9694d3eb04664e33bb5028d48d9e8a0b0bf6e9cef2ac43219c (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001CA8E2C1810>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"))}
+2023-02-12 10:00:07,948 127.0.0.1 - - [12/Feb/2023 10:00:07] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-12 10:00:59,402  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-12 10:00:59,559  * Restarting with stat
+2023-02-12 10:01:00,799  * Debugger is active!
+2023-02-12 10:01:00,805  * Debugger PIN: 133-707-356
+2023-02-12 10:01:06,241  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-12 10:01:06,409  * Restarting with stat
+2023-02-12 10:01:07,676  * Debugger is active!
+2023-02-12 10:01:07,682  * Debugger PIN: 133-707-356
+2023-02-12 10:01:12,865 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-12 10:01:12,865 [33mPress CTRL+C to quit[0m
+2023-02-12 10:01:12,866  * Restarting with stat
+2023-02-12 10:01:14,099  * Debugger is active!
+2023-02-12 10:01:14,106  * Debugger PIN: 133-707-356
+2023-02-12 10:01:29,984 <Response [200]>
+2023-02-12 10:01:45,990 127.0.0.1 - - [12/Feb/2023 10:01:45] "POST /reminder_membership/reading_followup HTTP/1.1" 200 -
+2023-02-12 10:03:52,708  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-12 10:03:52,891  * Restarting with stat
+2023-02-12 10:03:54,313  * Debugger is active!
+2023-02-12 10:03:54,319  * Debugger PIN: 133-707-356
+2023-02-12 10:04:13,272 {'Connection error': MaxRetryError("HTTPSConnectionPool(host='api.green-api.com', port=443): Max retries exceeded with url: /waInstance1101721779/sendTemplateButtons/9694d3eb04664e33bb5028d48d9e8a0b0bf6e9cef2ac43219c (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000019797D0B670>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))")}
+2023-02-12 10:04:13,286 127.0.0.1 - - [12/Feb/2023 10:04:13] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-12 10:06:20,931  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-12 10:06:21,069  * Restarting with stat
+2023-02-12 10:06:22,371  * Debugger is active!
+2023-02-12 10:06:22,377  * Debugger PIN: 133-707-356
+2023-02-12 10:08:14,171  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\members\\reminder_membership.py', reloading
+2023-02-12 10:08:14,310  * Restarting with stat
+2023-02-12 10:08:46,559 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-12 10:08:46,559 [33mPress CTRL+C to quit[0m
+2023-02-12 10:08:46,561  * Restarting with stat
+2023-02-12 10:08:47,781  * Debugger is active!
+2023-02-12 10:08:47,781  * Debugger PIN: 133-707-356
+2023-02-12 10:08:50,985 {'Connection error': MaxRetryError("HTTPSConnectionPool(host='api.green-api.com', port=443): Max retries exceeded with url: /waInstance1101721779/sendTemplateButtons/9694d3eb04664e33bb5028d48d9e8a0b0bf6e9cef2ac43219c (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000225DE51B6D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))")}
+2023-02-12 10:09:08,030 127.0.0.1 - - [12/Feb/2023 10:09:08] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-13 06:40:01,454 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-13 06:40:01,454 [33mPress CTRL+C to quit[0m
+2023-02-13 06:40:01,459  * Restarting with stat
+2023-02-13 06:40:02,792  * Debugger is active!
+2023-02-13 06:40:02,809  * Debugger PIN: 133-707-356
+2023-02-13 06:42:49,060 127.0.0.1 - - [13/Feb/2023 06:42:49] "POST /reminder_membership/reading_reminder HTTP/1.1" 200 -
+2023-02-13 18:42:33,498 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-13 18:42:33,499 [33mPress CTRL+C to quit[0m
+2023-02-13 18:42:33,505  * Restarting with stat
+2023-02-13 18:42:36,252  * Debugger is active!
+2023-02-13 18:42:36,279  * Debugger PIN: 105-773-601
+2023-02-13 18:42:40,841 b'{"idMessage":"BAE5CEB646BBD40E"}'
+2023-02-13 18:42:59,037 127.0.0.1 - - [13/Feb/2023 18:42:59] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-14 06:42:45,629  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 06:42:45,857  * Restarting with stat
+2023-02-14 06:42:49,378  * Debugger is active!
+2023-02-14 06:42:49,378  * Debugger PIN: 105-773-601
+2023-02-14 06:44:59,116 127.0.0.1 - - [14/Feb/2023 06:44:59] "POST /reminder_membership/reading_reminder HTTP/1.1" 200 -
+2023-02-14 06:54:02,769  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\members\\reminder_membership.py', reloading
+2023-02-14 06:54:02,910  * Restarting with stat
+2023-02-14 06:54:21,726 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-14 06:54:21,727 [33mPress CTRL+C to quit[0m
+2023-02-14 06:54:21,728  * Restarting with stat
+2023-02-14 06:54:22,877  * Debugger is active!
+2023-02-14 06:54:22,884  * Debugger PIN: 105-773-601
+2023-02-14 06:55:19,363  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\members\\reminder_membership.py', reloading
+2023-02-14 06:55:19,504  * Restarting with stat
+2023-02-14 06:55:20,805  * Debugger is active!
+2023-02-14 06:55:20,805  * Debugger PIN: 105-773-601
+2023-02-14 06:57:38,650 {'Connection error': MaxRetryError("HTTPSConnectionPool(host='api.green-api.com', port=443): Max retries exceeded with url: /waInstance1101721779/sendTemplateButtons/9694d3eb04664e33bb5028d48d9e8a0b0bf6e9cef2ac43219c (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000203FA86D870>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))")}
+2023-02-14 06:57:38,672 127.0.0.1 - - [14/Feb/2023 06:57:38] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-14 07:04:05,031  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:04:05,189  * Restarting with stat
+2023-02-14 07:04:06,641  * Debugger is active!
+2023-02-14 07:04:06,641  * Debugger PIN: 105-773-601
+2023-02-14 07:04:10,091 127.0.0.1 - - [14/Feb/2023 07:04:10] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-14 07:04:32,423  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:04:32,581  * Restarting with stat
+2023-02-14 07:04:33,977  * Debugger is active!
+2023-02-14 07:04:33,984  * Debugger PIN: 105-773-601
+2023-02-14 07:05:00,518 <Response [200]>
+2023-02-14 07:05:07,537 127.0.0.1 - - [14/Feb/2023 07:05:07] "POST /reminder_membership/reading_followup HTTP/1.1" 200 -
+2023-02-14 07:09:03,039  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:09:03,199  * Restarting with stat
+2023-02-14 07:09:04,755  * Debugger is active!
+2023-02-14 07:09:04,762  * Debugger PIN: 105-773-601
+2023-02-14 07:14:59,298  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:14:59,492  * Restarting with stat
+2023-02-14 07:15:00,889  * Debugger is active!
+2023-02-14 07:15:00,895  * Debugger PIN: 105-773-601
+2023-02-14 07:18:12,056  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:18:12,218  * Restarting with stat
+2023-02-14 07:18:13,474  * Debugger is active!
+2023-02-14 07:18:13,480  * Debugger PIN: 105-773-601
+2023-02-14 07:18:18,942 b'{"idMessage":"BAE50BA19DBDFE31"}'
+2023-02-14 07:18:33,956 127.0.0.1 - - [14/Feb/2023 07:18:33] "POST /reminder_membership/reading_followup HTTP/1.1" 200 -
+2023-02-14 07:18:49,956 127.0.0.1 - - [14/Feb/2023 07:18:49] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-14 07:19:26,734 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-14 07:19:26,734 [33mPress CTRL+C to quit[0m
+2023-02-14 07:19:26,735  * Restarting with stat
+2023-02-14 07:19:27,892  * Debugger is active!
+2023-02-14 07:19:27,898  * Debugger PIN: 105-773-601
+2023-02-14 07:19:33,887 127.0.0.1 - - [14/Feb/2023 07:19:33] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-14 07:20:33,394  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:20:33,552  * Restarting with stat
+2023-02-14 07:20:34,970  * Debugger is active!
+2023-02-14 07:20:34,976  * Debugger PIN: 105-773-601
+2023-02-14 07:20:39,345 {'Connection error': MaxRetryError("HTTPSConnectionPool(host='api.green-api.com', port=443): Max retries exceeded with url: /waInstance1101721779/sendTemplateButtons/9694d3eb04664e33bb5028d48d9e8a0b0bf6e9cef2ac43219c (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000146BB675F90>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))")}
+2023-02-14 07:20:47,386 127.0.0.1 - - [14/Feb/2023 07:20:47] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-14 07:24:02,107  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\members\\reminder_membership.py', reloading
+2023-02-14 07:24:02,356  * Restarting with stat
+2023-02-14 07:24:06,147  * Debugger is active!
+2023-02-14 07:24:06,167  * Debugger PIN: 105-773-601
+2023-02-14 07:24:08,174 b'{"idMessage":"BAE5D167BF92C7C8"}'
+2023-02-14 07:24:16,185 127.0.0.1 - - [14/Feb/2023 07:24:16] "POST /reminder_membership/reading_followup HTTP/1.1" 200 -
+2023-02-14 07:27:31,080  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:27:31,395  * Restarting with stat
+2023-02-14 07:27:34,927  * Debugger is active!
+2023-02-14 07:27:34,943  * Debugger PIN: 105-773-601
+2023-02-14 07:27:42,295 {'b': {'Connection error': MaxRetryError("HTTPSConnectionPool(host='api.green-api.com', port=443): Max retries exceeded with url: /waInstance1101721779/sendTemplateButtons/9694d3eb04664e33bb5028d48d9e8a0b0bf6e9cef2ac43219c (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001C27EB8D6C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))")}}
+2023-02-14 07:27:59,385 127.0.0.1 - - [14/Feb/2023 07:27:59] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-14 07:29:21,855  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:29:22,074  * Restarting with stat
+2023-02-14 07:29:25,099  * Debugger is active!
+2023-02-14 07:29:25,124  * Debugger PIN: 105-773-601
+2023-02-14 07:29:28,181 127.0.0.1 - - [14/Feb/2023 07:29:28] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-14 07:30:39,262  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:30:39,566  * Restarting with stat
+2023-02-14 07:30:42,639  * Debugger is active!
+2023-02-14 07:30:42,641  * Debugger PIN: 105-773-601
+2023-02-14 07:30:45,243 127.0.0.1 - - [14/Feb/2023 07:30:45] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-14 07:33:20,524  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:33:20,772  * Restarting with stat
+2023-02-14 07:33:24,367  * Debugger is active!
+2023-02-14 07:33:24,376  * Debugger PIN: 105-773-601
+2023-02-14 07:33:24,569 127.0.0.1 - - [14/Feb/2023 07:33:24] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-14 07:34:13,415 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-14 07:34:13,415 [33mPress CTRL+C to quit[0m
+2023-02-14 07:34:13,416  * Restarting with stat
+2023-02-14 07:34:17,297  * Debugger is active!
+2023-02-14 07:34:17,336  * Debugger PIN: 105-773-601
+2023-02-14 07:34:26,070 127.0.0.1 - - [14/Feb/2023 07:34:26] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-14 07:35:41,722  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:35:42,014  * Restarting with stat
+2023-02-14 07:35:45,126  * Debugger is active!
+2023-02-14 07:35:45,142  * Debugger PIN: 105-773-601
+2023-02-14 07:35:45,633 127.0.0.1 - - [14/Feb/2023 07:35:45] "[35m[1mPOST /reminder_membership/reading_followup HTTP/1.1[0m" 500 -
+2023-02-14 07:39:24,859  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:39:25,082  * Restarting with stat
+2023-02-14 07:39:27,704  * Debugger is active!
+2023-02-14 07:39:27,705  * Debugger PIN: 105-773-601
+2023-02-14 07:40:32,377  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:40:32,652  * Restarting with stat
+2023-02-14 07:40:35,683  * Debugger is active!
+2023-02-14 07:40:35,703  * Debugger PIN: 105-773-601
+2023-02-14 07:40:41,047 b'{"idMessage":"BAE50425AF9F0027"}'
+2023-02-14 07:40:51,057 127.0.0.1 - - [14/Feb/2023 07:40:51] "POST /reminder_membership/reading_followup HTTP/1.1" 200 -
+2023-02-14 07:42:20,223  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:42:20,531  * Restarting with stat
+2023-02-14 07:42:23,540  * Debugger is active!
+2023-02-14 07:42:23,545  * Debugger PIN: 105-773-601
+2023-02-14 07:43:39,074  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\function.py', reloading
+2023-02-14 07:43:39,370  * Restarting with stat
+2023-02-14 07:43:42,552  * Debugger is active!
+2023-02-14 07:43:42,555  * Debugger PIN: 105-773-601
+2023-02-14 07:43:50,701 b'{"idMessage":"BAE5E2DF8398B6CC"}'
+2023-02-14 07:44:03,716 127.0.0.1 - - [14/Feb/2023 07:44:03] "POST /reminder_membership/reading_followup HTTP/1.1" 200 -

@@ -1,6 +1,7 @@
 import secrets, string, requests, json, ssl, smtplib, re
-import base64
+import base64, logging
 import os,pytz
+
 from datetime import datetime
 from email.message import EmailMessage
 from decouple import config
@@ -11,6 +12,8 @@ current_time = datetime.now(pytz.timezone('Africa/Lusaka'))
 
 wa_key = config('WA_KEY')
 timeoutSeconds = 60
+
+logging.basicConfig(filename='reminder_logs', format='%(asctime)s %(message)s',  encoding='utf8', level=logging.WARNING)
 
 #FUNCTION TO CONVERT MOBILE NUMBER TO 9 DIDGITS
 def convert_phone_number(phone):
@@ -62,13 +65,19 @@ def send_wa_GreenAPI(sendto, msg):
     }
 
     response  = ""
-
     try:
         response = requests.request("POST", url, headers=headers, data = payload, timeout=timeoutSeconds)
-    except (requests.exceptions.RequestException, ValueError) as e:
-        response = e
+        response = response.text.encode('utf8')
+        logging.warning(response)
 
-    return response.text.encode('utf8')
+    except requests.exceptions.RequestException as errex:
+
+        response = requests.request("POST", url, headers=headers, data = payload, timeout=timeoutSeconds)
+        response = response.text.encode('utf8')
+        logging.warning(response)
+       
+
+    return response
 
 
 #FUNCTION TO SEND WHATSAPP USING GREEN API
@@ -86,13 +95,19 @@ def sendFile_wa_GAPI(sendto, link, caption):
     }
 
     response  = ""
-
     try:
         response = requests.request("POST", url, headers = headers, data = payload, timeout=timeoutSeconds)
-    except (requests.exceptions.RequestException, ValueError) as e:
-        response = e
-    
-    return response.text.encode('utf8')
+        response = response.text.encode('utf8')
+        logging.warning(response)
+
+    except requests.exceptions.RequestException as errex:
+
+        response = requests.request("POST", url, headers = headers, data = payload, timeout=timeoutSeconds)
+        response = response.text.encode('utf8')
+        logging.warning(response)
+       
+
+    return response
 
 
 #FUNCTION TO SEND WHATSAPP USING GREEN API
@@ -112,13 +127,20 @@ def sendFile_wa_GAPI_group(sendto, msg):
     }
 
     response  = ""
-
     try:
         response = requests.request("POST", url, headers = headers, data = payload, timeout=timeoutSeconds)
-    except (requests.exceptions.RequestException, ValueError) as e:
-        response = e
+        response = response.text.encode('utf8')
+        logging.warning(response)
 
-    return response.text.encode('utf8')
+    except requests.exceptions.RequestException as errex:
+
+        response = requests.request("POST", url, headers = headers, data = payload, timeout=timeoutSeconds)
+        response = response.text.encode('utf8')
+        logging.warning(response)
+       
+
+    return response
+
 
 
 #FUNCTION TO SEND WHATSAPP BUTTONS USING GREEN API
@@ -144,14 +166,17 @@ def sendBtn_GAPI(sendto, msg, yesURL, noURL):
     }
 
     response  = ""
-
     try:
         response = requests.request("POST", url, headers = headers, data = payload, timeout=timeoutSeconds)
-    except (requests.exceptions.RequestException, ValueError) as e:
-        response = e
-    
-    return response.text.encode('utf8')
+        response = response.text.encode('utf8')
+        logging.warning(response)
 
+    except requests.exceptions.RequestException as errex:
 
+        response = requests.request("POST", url, headers = headers, data = payload, timeout=timeoutSeconds)
+        response = response.text.encode('utf8')
+        logging.warning(response)
+       
 
+    return response
    
