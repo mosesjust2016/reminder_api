@@ -863,3 +863,15 @@
 2023-03-24 11:16:51,092 b'{"idMessage":"BAE57DD2D19B3EA1"}'
 2023-03-24 11:17:09,276 b'{"idMessage":"BAE5738D13E78C68"}'
 2023-03-24 11:17:19,293 127.0.0.1 - - [24/Mar/2023 11:17:19] "POST /reminder_membership/reading_reminder HTTP/1.1" 200 -
+2023-03-24 18:35:45,049  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\members\\reminder_membership.py', reloading
+2023-03-24 18:35:45,456  * Restarting with stat
+2023-03-24 18:35:50,900  * Debugger is active!
+2023-03-24 18:35:50,907  * Debugger PIN: 133-707-356
+2023-03-24 18:35:57,393  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\members\\reminder_membership.py', reloading
+2023-03-24 18:35:57,608  * Restarting with stat
+2023-03-24 18:35:59,345  * Debugger is active!
+2023-03-24 18:35:59,353  * Debugger PIN: 133-707-356
+2023-03-24 18:36:30,440  * Detected change in 'C:\\Users\\Moses Jasi\\Desktop\\python\\reminder_app\\reminder\\members\\reminder_membership.py', reloading
+2023-03-24 18:36:30,609  * Restarting with stat
+2023-03-24 18:36:32,634  * Debugger is active!
+2023-03-24 18:36:32,641  * Debugger PIN: 133-707-356

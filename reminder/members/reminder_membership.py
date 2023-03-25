@@ -274,8 +274,8 @@ def reading_followup():
             
             for x in registered_members:
 
-                yesURL = "https://reminder.mosesjasi.tk/backend/reminder_membership/response?ans=yes&token=" + x['token']
-                noURL =  "https://reminder.mosesjasi.tk/backend/reminder_membership/response?ans=no&token=" + x['token']
+                yesURL = "https://reminder.mosesjasi.biz/backend/reminder_membership/response?ans=yes&token=" + x['token']
+                noURL =  "https://reminder.mosesjasi.biz/backend/reminder_membership/response?ans=no&token=" + x['token']
 
                 res = sendBtn_GAPI("260" + x['wa_number'],  "Hi " +  x['firstname'] + " " + x['lastname'] +" Did you read todays chapters according to the reading plan", yesURL, noURL)
                 sleep(randint(6,18))
@@ -329,7 +329,7 @@ def response():
             resp = jsonify({'status': 400,
                         'isError': 'true',
                         'message' : 'Already updated the status'}), 400
-            return redirect("https://reminder.mosesjasi.tk/already-updated.html", code=302)
+            return redirect("https://reminder.mosesjasi.biz/already-updated.html", code=302)
         
         else:
 
@@ -340,13 +340,13 @@ def response():
             resp = jsonify({'status': 200,
                             'isError': 'false',
                             'message' : 'Status has been updated'}), 200
-            return redirect("https://reminder.mosesjasi.tk/status-update-success.html", code=302)
+            return redirect("https://reminder.mosesjasi.biz/status-update-success.html", code=302)
     else:
         resp = jsonify({'status': 400,
                         'isError': 'true',
                         'message' : 'The member does not exist'}), 400
                         
-        return redirect("https://reminder.mosesjasi.tk/does-not-exist.html", code=302)
+        return redirect("https://reminder.mosesjasi.biz/does-not-exist.html", code=302)
 
 
 
