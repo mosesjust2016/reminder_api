@@ -18,6 +18,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /reminder/
+          server-dir: /reminder_app/
           protocol: ftps
           port: 21 
