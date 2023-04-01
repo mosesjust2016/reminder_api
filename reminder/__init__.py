@@ -28,8 +28,7 @@ def create_app():
 
     else:
         encoded = urllib.parse.quote_plus(db_password)
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://
-mosesjasi_Admin:'+ encoded +'@localhost/mosesjasi_reminder'
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://mosesjasi_Admin:'+ encoded +'@localhost/mosesjasi_reminder'
 
     
      #JWT configs
