@@ -875,3 +875,27 @@
 2023-03-24 18:36:30,609  * Restarting with stat
 2023-03-24 18:36:32,634  * Debugger is active!
 2023-03-24 18:36:32,641  * Debugger PIN: 133-707-356
+2023-04-23 08:13:58,554 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-04-23 08:13:58,554 [33mPress CTRL+C to quit[0m
+2023-04-23 08:13:58,556  * Restarting with stat
+2023-04-23 08:13:59,694  * Debugger is active!
+2023-04-23 08:13:59,711  * Debugger PIN: 133-707-356
+2023-04-23 08:16:24,868 127.0.0.1 - - [23/Apr/2023 08:16:24] "POST /reminder_membership/happy_birthday HTTP/1.1" 200 -
+2023-04-23 08:17:26,314 127.0.0.1 - - [23/Apr/2023 08:17:26] "[31m[1mGET /reminder_membership/reading_reminder HTTP/1.1[0m" 405 -
+2023-04-23 08:17:33,340 b'{"idMessage":"BAE576844EB9D0C5"}'
+2023-04-23 08:17:46,456 b'{"idMessage":"BAE5FCED3A6451A1"}'
+2023-04-23 08:17:57,643 b'{"idMessage":"BAE55FBDFF98E3A4"}'
+2023-04-23 08:18:04,761 b'{"idMessage":"BAE5C987FA8CD611"}'
+2023-04-23 08:18:16,911 b'{"idMessage":"BAE59FB06DC1C307"}'
+2023-04-23 08:18:33,170 b'{"idMessage":"BAE5FCFD51FE49B6"}'
+2023-04-23 08:18:50,408 b'{"idMessage":"BAE5DBA63AF41DBC"}'
+2023-04-23 08:19:01,643 b'{"idMessage":"BAE54F04510AD884"}'
+2023-04-23 08:19:13,040 b'{"idMessage":"BAE56B8D7FCA912D"}'
+2023-04-23 08:19:26,390 b'{"idMessage":"BAE514B54FDCF0DD"}'
+2023-04-23 08:19:33,762 b'{"idMessage":"BAE5B60E074A87D1"}'
+2023-04-23 08:19:42,969 b'{"idMessage":"BAE53B4447026640"}'
+2023-04-23 08:19:52,455 b'{"idMessage":"BAE514EF602B923E"}'
+2023-04-23 08:20:04,673 b'{"idMessage":"BAE589603FAD8223"}'
+2023-04-23 08:20:16,893 b'{"idMessage":"BAE54D6E10BD7900"}'
+2023-04-23 08:20:33,904 127.0.0.1 - - [23/Apr/2023 08:20:33] "POST /reminder_membership/reading_reminder HTTP/1.1" 200 -
